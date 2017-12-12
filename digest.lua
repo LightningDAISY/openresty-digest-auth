@@ -175,6 +175,7 @@ local function showDigestAuth(state)
 		nonce
 	)
 	ngx.say(response401())
+	ngx.exit(ngx.HTTP_UNAUTHORIZED)
 end
 
 local function main()
@@ -184,7 +185,6 @@ local function main()
 		if returnCode then return true end
 	end
 	showDigestAuth(state)
-	return false
 end
 
 main()

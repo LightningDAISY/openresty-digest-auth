@@ -1,5 +1,5 @@
 # NAME
-Openresty-auth-digest
+Openresty-digest-auth
 
 # INSTALL
 lua-resty-memcached is required

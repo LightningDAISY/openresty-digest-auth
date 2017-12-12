@@ -18,10 +18,10 @@ local function response401()
 <!DOCTYPE html>
 <html>
 	<head>
-		401 Unauthorized</head>
+		<title>401 Unauthorized</title>
 	</head>
 	<body>
-		<h1></h1>
+		<h1>Unauthorized</h1>
 		<p>
 			This server could not verify that you are authorized to access the document requested. Either you supplied the wrong credentials (e.g., bad password), or your browser doesn't understand how to supply the credentials required.
 		</p>

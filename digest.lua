@@ -92,7 +92,7 @@ local function parseAuthorization()
 		st = st:gsub("^%s", "")
 		st = st:gsub("%s$", "")
 		local key,value = st:match('([^=]+)="?([^"]+)"?')
-		result[key] = value
+		if key then result[key] = value end
 	end
 	return result
 end
@@ -182,7 +182,10 @@ local function main()
 	local returnCode, state
 	if ngx.req.get_headers()["Authorization"] then
 		returnCode, state = authenticate()
-		if returnCode then return true end
+		if returnCode then
+			ngx.status = ngx.HTTP_OK
+			return true
+		end
 	end
 	showDigestAuth(state)
 end
